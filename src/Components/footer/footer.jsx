@@ -6,7 +6,7 @@ import {
   FaXTwitter,
   FaYoutube,
 } from "react-icons/fa6";
-import "./Footer.css"; // For custom styling if needed
+ // For custom styling if needed
 
 export default function Footer() {
   return (
