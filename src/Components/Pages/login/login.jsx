@@ -25,16 +25,20 @@ const LoginPage = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
-        credentials: "include", 
+        body: JSON.stringify({
+          email: data.email,   // or username: data.email if backend expects that
+          password: data.password,
+        }),
+        credentials: "include",
       });
-
+  
       if (response.ok) {
+        const result = await response.json();
+  
         toast.success("Login successful!");
-
         localStorage.setItem("isAuthenticated", "true");
-        localStorage.setItem("user", JSON.stringify(data.user)); 
-      
+        localStorage.setItem("user", JSON.stringify(result.user));
+  
         reset();
         navigate("/people");
       } else {
