@@ -29,7 +29,6 @@ const LoginPage = () => {
           email: data.email,   // or username: data.email if backend expects that
           password: data.password,
         }),
-        credentials: "include",
       });
   
       if (response.ok) {
