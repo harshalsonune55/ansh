@@ -25,6 +25,7 @@ const LoginPage = () => {
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include" ,
         body: JSON.stringify({
           email: data.email,   // or username: data.email if backend expects that
           password: data.password,
